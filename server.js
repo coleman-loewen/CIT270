@@ -21,7 +21,7 @@ app.post('/user', (req,res)=>{
     const newUserRequestObject = req.body;
     console.log('New User:' ,JSON.stringify(newUserRequestObject));
     redisclient.hSet('users',req.body.email,JSON.stringify(newUserRequestObject));
-    res.send('New user: '+newUserRequestObject.email+' added')
+    res.send('New user: '+newUserRequestObject.email+' added');
 });
 app.post("/login", (req,res)=>{
     const loginEmail = req.body.userName;
