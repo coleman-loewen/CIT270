@@ -1,0 +1,6 @@
+    "userName": "testc@testc.bc.ca",
+    "email": "testc@testc.bc.ca",
+    "password": "P@ssw0rd",
+    "phone": "5555595559",
+    "birthDate": "0002-11-01",
+    "verifyPassword": "P@ssw0rd"
