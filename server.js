@@ -3,7 +3,7 @@ const bodyparser = require("body-parser")
 const https = require('https');
 const fs = require('fs');
 const {v4: uuidv4} = require("uuid") 
-const port = 4043;
+const port = 443;
 const app = express();
 const {createClient} = require('redis');
 const md5 = require('md5');
@@ -15,7 +15,8 @@ app.use(bodyparser.json())
 
 https.createServer({
     key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert'),    
+    cert: fs.readFileSync('server.cert'),
+    ca: fs.readFileSync('chain.pem'),    
 }, app).listen(port, async () => {
         await redisclient.connect();
         console.log('Listening...')
