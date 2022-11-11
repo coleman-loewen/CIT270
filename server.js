@@ -14,9 +14,9 @@ const redisclient = createClient(
 app.use(bodyparser.json())
 
 https.createServer({
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert'),
-    ca: fs.readFileSync('chain.pem'),    
+    key: fs.readFileSync('usr/src/app/SSL/server.key'),
+    cert: fs.readFileSync('usr/src/app/SSL/server.cert'),
+    ca: fs.readFileSync('usr/src/app/SSL/chain.pem'),    
 }, app).listen(port, async () => {
     console.log('listening...')
     try{   
