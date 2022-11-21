@@ -29,8 +29,20 @@ spec:
           limits:
             cpu: 0.125
             memory: 600Mi
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
       volumes:
       - name: ssl
         secret: 
           secretName: ssl.secret.coleman
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pyrolyzer-loadbalancer
+spec:
+  selector:
+    app: pyrolyzer
+  type: LoadBalancer
+  ports:
+  - port: 443
+    targetPort: 443

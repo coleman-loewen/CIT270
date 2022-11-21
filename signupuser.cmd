@@ -1,1 +1,1 @@
-curl -v -d "@newuser.json" -X POST -H "Content-Type
+curl -v -d "@newuser.json" --ssl-no-revoke -X POST -H "Content-Type:application/json" https://colemanloewen.cit270.com/user --insecure
