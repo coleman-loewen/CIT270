@@ -8,7 +8,7 @@ const app = express();
 const {createClient} = require('redis');
 const md5 = require('md5');
 const redisclient = createClient(
-   { url: 'redis://default@34.122.148.133:6379',
+   { url: `redis://default:${process.env.REDIS_PASS}@redis-stedi-cole:6379`,
    }
    );
 app.use(bodyparser.json())
